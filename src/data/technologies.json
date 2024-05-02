@@ -1,0 +1,26 @@
+[
+  {
+    "src": "/assets/technology-icons/html5-technology.svg",
+    "alt": "HTML5 Icon"
+  },
+  {
+    "src": "/assets/technology-icons/css3-technology.svg",
+    "alt": "CSS3 Icon"
+  },
+  {
+    "src": "/assets/technology-icons/sass-technology.svg",
+    "alt": "Sass Icon"
+  },
+  {
+    "src": "/assets/technology-icons/nodejs-technology.svg",
+    "alt": "Node.js Icon"
+  },
+  {
+    "src": "/assets/technology-icons/angular-technology.svg",
+    "alt": "Angular Icon"
+  },
+  {
+    "src": "/assets/technology-icons/python-technology.svg",
+    "alt": "Python Icon"
+  }
+]
