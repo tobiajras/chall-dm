@@ -39,8 +39,10 @@ const Navbar = () => {
   return (
     <header
       className={`${
-        isBackground && 'md:bg-color-background'
-      } flex md:justify-center w-full fixed top-0 left-0 right-0 z-30 transition-colors bg-color-background md:bg-transparent`}
+        isBackground
+          ? 'md:bg-color-background flex md:justify-center w-full fixed top-0 left-0 right-0 z-30 transition-colors bg-color-background'
+          : 'flex md:justify-center w-full fixed top-0 left-0 right-0 z-30 transition-colors bg-color-background md:bg-transparent'
+      }`}
     >
       <div className='flex justify-between items-center max-w-6xl w-full h-20 md:h-24 py-3 mx-6 sm:mx-8 md:mx-10'>
         <div className='h-full w-full flex justify-start items-center md:w-auto'>
