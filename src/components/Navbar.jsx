@@ -4,8 +4,8 @@ import { Link } from 'react-scroll';
 
 import { useEffect, useState } from 'react';
 
-import HamburguerIcon from '@/components/Icons/HamburguerIcon';
-import CloseIcon from '@/components/Icons/CloseIcon';
+import HamburguerIcon from '@/components/icons/HamburguerIcon';
+import CloseIcon from '@/components/icons/CloseIcon';
 import HireUsIcon from './icons/HireUsIcon';
 
 const Navbar = () => {
