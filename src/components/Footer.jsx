@@ -1,4 +1,8 @@
-import Image from 'next/image';
+'use client';
+
+import { Link } from 'react-scroll';
+import { useState } from 'react';
+
 import React from 'react';
 import TwitterIcon from './icons/social/TwitterIcon';
 import DribbleIcon from './icons/social/DribbleIcon';
@@ -6,9 +10,11 @@ import FacebookIcon from './icons/social/FacebookIcon';
 import InstagramIcon from './icons/social/InstagramIcon';
 
 const Footer = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <footer className='flex justify-center py-40'>
-      <section className='flex max-w-6xl w-full'>
+      <section className='flex flex-col gap-8 md:gap-0 md:flex-row max-w-6xl w-full mx-6 sm:mx-8 md:mx-10'>
         <article className='w-full'>
           <h5 className='text-color-title mb-3'>compleet labs</h5>
           <p className='max-w-[400px]'>
@@ -55,30 +61,137 @@ const Footer = () => {
             </li>
           </ul>
         </article>
-        <article className='grid grid-cols-3 w-full'>
+        <article className='grid md:grid-cols-3 gap-y-5 md:gap-y-0 w-full'>
           <div>
             <h5 className='text-color-title mb-3'>SITEMAP</h5>
             <ul className='flex flex-col gap-2'>
-              <li>Home</li>
-              <li>Technology</li>
-              <li>Services</li>
-              <li>About</li>
+              <li>
+                <Link
+                  onClick={() => setIsOpen(false)}
+                  className='hover:text-color-title transition-colors cursor-pointer'
+                  to='homeSection'
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  onClick={() => setIsOpen(false)}
+                  className='hover:text-color-title transition-colors cursor-pointer'
+                  to='technologySection'
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                >
+                  Technology
+                </Link>
+              </li>
+              <li>
+                <Link
+                  onClick={() => setIsOpen(false)}
+                  className='hover:text-color-title transition-colors cursor-pointer'
+                  to='servicesSection'
+                  spy={true}
+                  smooth={true}
+                  offset={-200}
+                  duration={500}
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  onClick={() => setIsOpen(false)}
+                  className='hover:text-color-title transition-colors cursor-pointer'
+                  to='aboutSection'
+                  spy={true}
+                  smooth={true}
+                  offset={-300}
+                  duration={500}
+                >
+                  About
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
             <h5 className='text-color-title mb-3'>CASE STUDIES</h5>
             <ul className='flex flex-col gap-2'>
-              <li>Swiss Airlines</li>
-              <li>Google</li>
-              <li>Apple</li>
-              <li>Nike</li>
+              <li>
+                <a
+                  className='hover:text-color-title transition-colors'
+                  href='https://www.swiss.com/ar/es/homepage'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Swiss Airlines
+                </a>
+              </li>
+              <li>
+                <a
+                  className='hover:text-color-title transition-colors'
+                  href='https://about.google/intl/es/products/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Google
+                </a>
+              </li>
+              <li>
+                <a
+                  className='hover:text-color-title transition-colors'
+                  href='https://www.apple.com/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Apple
+                </a>
+              </li>
+              <li>
+                <a
+                  className='hover:text-color-title transition-colors'
+                  href='https://www.nike.com.ar/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Nike
+                </a>
+              </li>
             </ul>
           </div>
           <div>
             <h5 className='text-color-title mb-3'>CONTACT</h5>
             <ul className='flex flex-col gap-2'>
-              <li>Jobs</li>
-              <li>Hire us</li>
+              <li>
+                <Link
+                  onClick={() => setIsOpen(false)}
+                  className='hover:text-color-title transition-colors cursor-pointer'
+                  to='caseStudiesSection'
+                  spy={true}
+                  smooth={true}
+                  offset={-152}
+                  duration={500}
+                >
+                  Case studies
+                </Link>
+              </li>
+              <li>
+                <Link
+                  onClick={() => setIsOpen(false)}
+                  className='group hover:text-color-title transition-colors cursor-pointer'
+                  to='aboutSection'
+                  spy={true}
+                  smooth={true}
+                  offset={-300}
+                  duration={500}
+                >
+                  <span className=''>Hire us</span>
+                </Link>
+              </li>
             </ul>
           </div>
         </article>

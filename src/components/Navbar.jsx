@@ -12,7 +12,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className='flex md:justify-center w-full absolute top-0 left-0 right-0 z-30'>
+    <header className='flex md:justify-center w-full fixed top-0 left-0 right-0 z-30'>
       <div className='flex justify-between items-center max-w-6xl w-full h-20 md:h-24 py-3 mx-6 sm:mx-8 md:mx-10'>
         <div className='h-full w-full flex justify-start items-center md:w-auto'>
           <Link
@@ -20,11 +20,10 @@ const Navbar = () => {
             to='homeSection'
             spy={true}
             smooth={true}
-            offset={-262}
             duration={500}
             onClick={() => setIsOpen(false)}
           >
-            <h2 className='text-lg text-color-title font-semibold'>
+            <h2 className='sm:text-lg text-color-title font-semibold'>
               compleet labs
             </h2>
           </Link>
@@ -54,7 +53,6 @@ const Navbar = () => {
                 to='homeSection'
                 spy={true}
                 smooth={true}
-                offset={-262}
                 duration={500}
               >
                 Home
@@ -64,10 +62,10 @@ const Navbar = () => {
               <Link
                 onClick={() => setIsOpen(false)}
                 className='hover:text-color-title transition-colors cursor-pointer flex items-center gap-3'
-                to='experienceSection'
+                to='servicesSection'
                 spy={true}
                 smooth={true}
-                offset={-152}
+                offset={-200}
                 duration={500}
               >
                 Services
@@ -77,10 +75,10 @@ const Navbar = () => {
               <Link
                 onClick={() => setIsOpen(false)}
                 className='hover:text-color-title transition-colors cursor-pointer flex items-center gap-3'
-                to='skillsSection'
+                to='technologySection'
                 spy={true}
                 smooth={true}
-                offset={-152}
+                offset={-80}
                 duration={500}
               >
                 Technology
@@ -90,7 +88,7 @@ const Navbar = () => {
               <Link
                 onClick={() => setIsOpen(false)}
                 className='hover:text-color-title transition-colors cursor-pointer flex items-center gap-3'
-                to='aboutMeSection'
+                to='caseStudiesSection'
                 spy={true}
                 smooth={true}
                 offset={-152}
@@ -103,10 +101,10 @@ const Navbar = () => {
               <Link
                 onClick={() => setIsOpen(false)}
                 className='hover:text-color-title transition-colors cursor-pointer flex items-center gap-3'
-                to='contactSection'
+                to='aboutSection'
                 spy={true}
                 smooth={true}
-                offset={-152}
+                offset={-300}
                 duration={500}
               >
                 About
@@ -116,10 +114,10 @@ const Navbar = () => {
               <Link
                 onClick={() => setIsOpen(false)}
                 className='group hover:text-color-title transition-colors cursor-pointer flex items-center gap-2'
-                to='contactSection'
+                to='aboutSection'
                 spy={true}
                 smooth={true}
-                offset={-152}
+                offset={-300}
                 duration={500}
               >
                 <HireUsIcon className='fill-color-text group-hover:fill-color-title w-6 h-6' />
