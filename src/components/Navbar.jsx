@@ -34,6 +34,8 @@ const Navbar = () => {
     };
   }, []);
 
+  console.log(isBackground);
+
   return (
     <header
       className={`${
