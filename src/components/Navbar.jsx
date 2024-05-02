@@ -2,7 +2,7 @@
 
 import { Link } from 'react-scroll';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import HamburguerIcon from '@/components/icons/HamburguerIcon';
 import CloseIcon from '@/components/icons/CloseIcon';
@@ -11,9 +11,12 @@ import HireUsIcon from './icons/HireUsIcon';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isBackground, setIsBackground] = useState(false);
+  const scrollHandlerRef = useRef(() => {});
 
-  const scrollHeader = () => {
-    if (window.scrollY >= 20) {
+  scrollHandlerRef.current = () => {
+    const scrollTop =
+      document.documentElement.scrollTop || document.body.scrollTop;
+    if (scrollTop >= 20) {
       setIsBackground(true);
     } else {
       setIsBackground(false);
@@ -21,7 +24,14 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', scrollHeader);
+    const handleScroll = () => scrollHandlerRef.current();
+    window.addEventListener('scroll', handleScroll);
+
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (

@@ -5,7 +5,6 @@ const CloseIcon = ({ className }) => {
       fill='none'
       strokeWidth='0'
       viewBox='0 0 24 24'
-      class='navbar_menuHamburger'
       height='1em'
       width='1em'
       className={` ${className}`}
