@@ -8,9 +8,9 @@ const HomeSection = () => {
       className='flex justify-center w-full overflow-hidden'
     >
       <div className='flex items-center max-w-6xl w-full'>
-        <article className='my-24 w-full ml-6 sm:ml-8 md:ml-10'>
+        <article className='mt-24 mb-12 sm:mb-20 md:mt-32 lg:mt-24 w-full ml-6 sm:ml-8 md:ml-10'>
           <div className='sm:text-[28px] md:text-4xl text-color-title font-semibold'>
-            <h2>We build beautiful and</h2>
+            <h2 className='text-nowrap'>We build beautiful and</h2>
             <h2>reliable web solutions</h2>
           </div>
           <div className='mt-3 text-[10px] sm:text-base md:text-lg'>
@@ -30,7 +30,7 @@ const HomeSection = () => {
             </button>
           </div>
         </article>
-        <article className='w-full'>
+        <article className='w-full relative'>
           <Image
             priority
             className='md:ml-24'
@@ -39,6 +39,7 @@ const HomeSection = () => {
             height={832}
             alt='background image'
           />
+          <div className='absolute top-0 -right-28 bg-gradient-to-l from-color-background to-color-background/50 w-10 h-full'></div>
         </article>
       </div>
     </section>

@@ -18,9 +18,9 @@ const CaseStudies = () => {
   return (
     <section
       id='caseStudiesSection'
-      className='flex flex-col items-center bg-white w-full pt-24 sm:pt-40 mb:pb-16 sm:pb-24'
+      className='flex flex-col items-center bg-white w-full pt-16 sm:pt-24 mb:pb-16'
     >
-      <h4 className='mb-10 text-color-title-dark text-xs sm:text-sm font-bold'>
+      <h4 className='mb-10 text-color-title-dark text-xs sm:text-sm font-semibold'>
         CLIENTS WE WORKED WITH
       </h4>
       <div className='max-w-6xl w-full overflow-hidden' ref={emblaRef}>

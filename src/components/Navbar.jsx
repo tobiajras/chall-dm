@@ -2,7 +2,7 @@
 
 import { Link } from 'react-scroll';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import HamburguerIcon from '@/components/Icons/HamburguerIcon';
 import CloseIcon from '@/components/Icons/CloseIcon';
@@ -10,9 +10,26 @@ import HireUsIcon from './icons/HireUsIcon';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isBackground, setIsBackground] = useState(false);
+
+  const scrollHeader = () => {
+    if (window.scrollY >= 20) {
+      setIsBackground(true);
+    } else {
+      setIsBackground(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', scrollHeader);
+  });
 
   return (
-    <header className='flex md:justify-center w-full fixed top-0 left-0 right-0 z-30'>
+    <header
+      className={`${
+        isBackground && 'md:bg-color-background'
+      } flex md:justify-center w-full fixed top-0 left-0 right-0 z-30 transition-colors bg-color-background md:bg-transparent`}
+    >
       <div className='flex justify-between items-center max-w-6xl w-full h-20 md:h-24 py-3 mx-6 sm:mx-8 md:mx-10'>
         <div className='h-full w-full flex justify-start items-center md:w-auto'>
           <Link
@@ -23,7 +40,7 @@ const Navbar = () => {
             duration={500}
             onClick={() => setIsOpen(false)}
           >
-            <h2 className='sm:text-lg text-color-title font-semibold'>
+            <h2 className='sm:text-lg text-color-title font-medium'>
               compleet labs
             </h2>
           </Link>
@@ -43,9 +60,9 @@ const Navbar = () => {
             !isOpen
               ? '-right-full opacity-0 md:opacity-100'
               : 'right-0 opacity-100'
-          } absolute md:relative top-20 transition-all duration-[400ms] bg-color-background-dark p-4 md:p-auto md:top-auto md:right-auto h-screen w-1/2 md:w-auto md:h-auto md:flex md:justify-center`}
+          } absolute md:relative top-20 transition-all duration-[400ms] bg-color-background md:bg-transparent p-6 md:p-0 md:top-auto md:right-auto h-screen w-1/2 md:w-auto md:h-auto md:flex md:justify-center`}
         >
-          <ul className='flex flex-col gap-3 md:flex-row md:gap-8 font-medium'>
+          <ul className='flex flex-col gap-3 md:flex-row md:gap-4 lg:gap-6'>
             <li className=''>
               <Link
                 onClick={() => setIsOpen(false)}
@@ -120,7 +137,7 @@ const Navbar = () => {
                 offset={-300}
                 duration={500}
               >
-                <HireUsIcon className='fill-color-text group-hover:fill-color-title w-6 h-6' />
+                <HireUsIcon className='hidden md:block fill-color-text group-hover:fill-color-title w-6 h-6' />
                 <span className=''>Hire us</span>
               </Link>
             </li>
