@@ -32,6 +32,7 @@ const Circularstd = localFont({
 });
 
 export const metadata = {
+  metadataBase: 'https://challenge-domo.netlify.app/',
   title: 'compleet labs - domo challenge',
   description: 'Domo challenge - frontend',
 };
