@@ -22,7 +22,7 @@ const TechnologySection = () => {
             faucibus dolor auctor.
           </p>
         </article>
-        <article className='grid grid-cols-2 gap-x-5 gap-y-3 pl-3 sm:gap-x-10 md:gap-x-10 lg:gap-x-24 sm:gap-y-10 sm:p-10 md:p-12'>
+        <article className='grid grid-cols-2 gap-x-3 gap-y-3 pl-3 sm:gap-x-10 md:gap-x-10 lg:gap-x-24 sm:gap-y-10 sm:p-10 md:p-12'>
           {technologies.map((icon, index) => (
             <div className='h-10 sm:h-16 md:h-24' key={index}>
               <Image
